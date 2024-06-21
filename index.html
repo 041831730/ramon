@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramon Campos</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #121212;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input[type="text"] {
+            width: 300px; /* Largura inicial para desktop */
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #222;
+            color: white;
+        }
+
+        .select-category {
+            margin-left: 10px;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #222;
+            color: white;
+            font-size: 14px;
+        }
+
+        .subscribe-button {
+            padding: 12px 20px;
+            background-color: #212121;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .prompt {
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #333;
+        }
+
+        .prompt-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-bar input[type="text"] {
+                width: 100%; /* Ocupar toda a largura disponível */
+                margin-bottom: 10px;
+            }
+
+            .select-category {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .prompt {
+                margin: 10px 0;
+            }
+        }
+    </style>
+    <script>
+        function filterPrompts() {
+            var input = document.getElementById('search-input').value.toUpperCase();
+            var category = document.getElementById('categorySelect').value.toUpperCase();
+            var prompts = document.getElementsByClassName('prompt');
+            
+            for (var i = 0; i < prompts.length; i++) {
+                var h3 = prompts[i].getElementsByTagName('h3')[0];
+                var categoryText = prompts[i].getElementsByClassName('label')[0].textContent.toUpperCase();
+                
+                if (h3.innerHTML.toUpperCase().indexOf(input) > -1 && (category === 'TODOS' || categoryText.indexOf(category) > -1)) {
+                    prompts[i].style.display = "";
+                } else {
+                    prompts[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-title">
+            <a href="#">Ramon Campos</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar" id="search-input" onkeyup="filterPrompts()">
+            <select id="categorySelect" class="select-category" onchange="filterPrompts()">
+                <option value="Todos">Todos</option>
+                <option value="Ramon Campos">Ramon Campos</option>
+                <option value="GPT4">GPT4 Vision</option>
+                <option value="Gemini">Gemini</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="prompt">
+            <div class="label">Ramon Campos</div>
+            <div class="prompt-image">
+                <img src="crie.webp" alt="Crie, Lance e Lucre é uma imersão para você que é iniciante ou entusiasta do mercado de infoprodutos.">
+            </div>
+            <div class="prompt-info">
+                <h3>Crie, Lance e Lucre</h3>
+                <p>R$97,00</p>
+            </div>
+            <div class="prompt-description">
+                <p>Vou te ajudar a transformar o seu conhecimento e suas habilidades, principalmente da criação de conteúdo em uma forma de renda extra. Tudo isso através de estratégias simples que até mesmo os mais iniciantes irão conseguir criar infoprodutos rentáveis que gerem uma renda mensal de mil reais</p>
+            </div>
+            <a class="subscribe-button" href="https://pay.hotmart.com/K82175394U?sck=HOTMART_SITE&off=r140w6so&hotfeature=33&_gl=1*1374rfd*_gcl_au*NTI2NjM4NTUzLjE3MTkwMDYyNTE.*_ga*MTYzMjcyODA0LjE3MDM1OTYxNDA.*_ga_GQH2V1F11Q*MTcxOTAwNjI0OC41LjEuMTcxOTAwNzM5MS40Ni4wLjA.">Ver Produto Completo</a>
+        </div>
+
+        <div class="prompt">
+            <div class="label">Ramon Campos</div>
+            <div class="prompt-image">
+                <img src="creator.webp" alt="O Creator Speed vai acelerar sua produção de conteúdo e te fazer economizar até 50% de tempo que você gasta criando apenas copiando minhas técnicas de criação.">
+            </div>
+            <div class="prompt-info">
+                <h3>Creator Speed</h3>
+                <p>R$99,00</p>
+            </div>
+            <div class="prompt-description">
+                <p>O Creator Speed vai acelerar sua produção de conteúdo e te fazer economizar até 50% de tempo que você gasta criando apenas copiando minhas técnicas de criação. Simples, rápido e fácil! Criar conteúdo não precisa ser complicado, tem que ser um hábito prazeroso que está na sua rotina.</p>
+            </div>
+            <a class="subscribe-button" href="https://pay.hotmart.com/B80312569E?sck=HOTMART_SITE&off=sgwl3dwe&hotfeature=33&_gl=1*gk998x*_gcl_au*NTI2NjM4NTUzLjE3MTkwMDYyNTE.*_ga*MTYzMjcyODA0LjE3MDM1OTYxNDA.*_ga_GQH2V1F11Q*MTcxOTAwNjI0OC41LjEuMTcxOTAwNzYxMC42MC4wLjA.">Ver Produto Completo</a>
+        </div>
+
+        <div class="prompt">
+            <div class="label">Ramon Campos</div>
+            <div class="prompt-image">
+                <img src="nitro.webp" alt="A Nitro Labs é uma mentoria de implementação em grupo. Em 2 meses teremos 5 encontros ao vivo e online para finalmente tirar o seu infoproduto do papel e fazer com que você gere renda através dele.">
+            </div>
+            <div class="prompt-info">
+                <h3>Mentoria Nitro Lab</h3>
+                <p>R$1697,00</p>
+            </div>
+            <div class="prompt-description">
+                <p>A Nitro Labs é uma mentoria de implementação em grupo. Em 2 meses teremos 5 encontros ao vivo e online para finalmente tirar o seu infoproduto do papel e fazer com que você gere renda através dele.</p>
+            </div>
+            <a class="subscribe-button" href="https://pay.hotmart.com/O82945194O?sck=HOTMART_SITE&off=hnypc7qm&hotfeature=33&_gl=1*16phvtr*_gcl_au*NTI2NjM4NTUzLjE3MTkwMDYyNTE.*_ga*MTYzMjcyODA0LjE3MDM1OTYxNDA.*_ga_GQH2V1F11Q*MTcxOTAwNjI0OC41LjEuMTcxOTAwNzc4OS42MC4wLjA.">Ver Produto Completo</a>
+        </div>
+
+        <div class="prompt">
+            <div class="label">Ramon Campos</div>
+            <div class="prompt-image">
+                <img src="reels.webp" alt="O Reels React é uma imersão de 4 encontros online e ao vivo com o intuito de te destravar e acelerar o seu crescimento com Reels">
+            </div>
+            <div class="prompt-info">
+                <h3>Reels React</h3>
+                <p>R$197,00</p>
+            </div>
+            <div class="prompt-description">
+                <p>O Reels React é uma imersão de 4 encontros online e ao vivo com o intuito de te destravar e acelerar o seu crescimento com Reels. Eu, Ramon Campos, e convidados iremos reagir às suas produções e apontar pontos fortes e fracos e ainda direcionar o melhor caminho para que seus vídeos alcancem cada vez mais pessoas para que você possa convertê-las.</p>
+            </div>
+            <a class="subscribe-button" href="https://pay.hotmart.com/F74150062B?sck=HOTMART_SITE&off=ujolr5es&hotfeature=33&_gl=1*ai0jhp*_gcl_au*NTI2NjM4NTUzLjE3MTkwMDYyNTE.*_ga*MTYzMjcyODA0LjE3MDM1OTYxNDA.*_ga_GQH2V1F11Q*MTcxOTAwNjI0OC41LjEuMTcxOTAwNzg3My42MC4wLjA.">Ver Produto Completo</a>
+        </div>
+
+        <div class="prompt">
+            <div class="label">Ramon Campos</div>
+            <div class="prompt-image">
+                <img src="rota.webp" alt="Não é nenhum segredo que um bom conteúdo é um dos principais pilares de um projeto na tarefa de gerar leads e vendas.">
+            </div>
+            <div class="prompt-info">
+                <h3>Rota da Criação de Conteúdo</h3>
+                <p>R$397,00</p>
+            </div>
+            <div class="prompt-description">
+                <p>Não é nenhum segredo que um bom conteúdo é um dos principais pilares de um projeto na tarefa de gerar leads e vendas. Com o processo correto você irá conseguir agilizar essa produção, aumentando a frequência sem perder a qualidade dos seus posts.</p>
+            </div>
+            <a class="subscribe-button" href="https://pay.hotmart.com/W28459313O?sck=HOTMART_SITE&off=pq38h71b&hotfeature=33&_gl=1*dd5nsd*_gcl_au*NTI2NjM4NTUzLjE3MTkwMDYyNTE.*_ga*MTYzMjcyODA0LjE3MDM1OTYxNDA.*_ga_GQH2V1F11Q*MTcxOTAwNjI0OC41LjEuMTcxOTAwODA5MC42MC4wLjA.">Ver Produto Completo</a>
+        </div>
+
+        <div class="prompt">
+            <div class="label">Ramon Campos</div>
+            <div class="prompt-image">
+                <img src="brain.webp" alt="Acompanhamento semanal em grupo de criação de conteúdo e produção de Reels.">
+            </div>
+            <div class="prompt-info">
+                <h3>Brain - Mentoria Ramon Campos</h3>
+                <p>R$4997,00</p>
+            </div>
+            <div class="prompt-description">
+                <p>Os encontros serão em média de 1h30 e iremos mapear o melhor caminho para você crescer através da produção de conteúdo e também aprender os caminhos que eu usei para ser um dos creators mais versáteis do mercado hoje. Faturando com publis, parcerias, afiliados, palestras e principalmente infoprodutos.</p>
+            </div>
+            <a class="subscribe-button" href="https://pay.hotmart.com/T75255955O?sck=HOTMART_SITE&off=3iaji2t7&hotfeature=33&_gl=1*1wuwdvr*_gcl_au*NTI2NjM4NTUzLjE3MTkwMDYyNTE.*_ga*MTYzMjcyODA0LjE3MDM1OTYxNDA.*_ga_GQH2V1F11Q*MTcxOTAwNjI0OC41LjEuMTcxOTAwODE3Ni42MC4wLjA.">Ver Produto Completo</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-wraper">
+            <p>2024 - Yuta Freitas, Todos os direitos reservados</p>
+            <div class="logo-title">
+                <a href=""><h3>Meu Site</h3></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

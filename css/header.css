@@ -1,0 +1,73 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #121212;
+}
+.prompt{
+    background-color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s;
+}
+.prompt:hover{
+    transform: scale(1.05);
+}
+.prompt-image{
+    background-color: #555;
+    padding: 0;
+    display: grid;
+
+    place-items: center;
+}
+.prompt-info h3{
+    margin: 0;
+    color: white;
+}
+.prompt-info p{
+    margin: 5px 0;
+    color: #ccc;
+}
+.prompt-description{
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+}
+.content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+    max-width: 1280px;
+    margin: 10px auto;
+}
+.label{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 3px 6px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.prompt .subscribe-button{
+    margin: 8px auto;
+    display: block;
+    width: 200px;
+    text-align: center;
+}
+.footer {
+    background-color: #121212;
+    color: white;
+    padding: 20px;
+
+    margin: 0 auto;
+}
+.footer-wraper{
+    justify-content: space-between;
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+}
